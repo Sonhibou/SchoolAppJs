@@ -1,0 +1,32 @@
+.bande-tittle{
+    background : #CE0033;
+    height : 100px;
+}
+.title_h4{
+    color: #FFFFFF;
+    text-align: center; 
+}
+.row{
+    margin-top: 50px;
+}
+.form{
+    width : 100%;
+    
+}
+.btn-ajouter{
+    background : #CE0033;
+    color : #FFFFFF;
+    border-color: #CE0033;
+    height : 40px;
+    border-radius: 7px;
+    width : 90px;
+
+}
+.btn-ajouter:hover{
+    background : #FFFFFF;
+    color : #CE0033;
+    border-color: #CE0033;
+    height : 40px;
+    border-radius: 7px;
+    width : 90px;
+}
