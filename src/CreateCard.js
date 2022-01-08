@@ -16,7 +16,7 @@ export const createCard = (apprenant)=>{
     const idCard = "idCard-" + i;
     const idModifier = "linkmodifier-" + i; 
     const idSupprimer = "linkSupprimer" + i;
-    const nomSaisi = nom.value
+    const nomSaisi = nom.value;
     secondCard.insertAdjacentHTML("beforeend", `
     <div class="card" id=${idCard} style="width: 30rem;">
    <div></div>
@@ -39,22 +39,23 @@ export const createCard = (apprenant)=>{
     prenom.value = apprenant.prenom;
     niveau.value = apprenant.niveau;
     texterea.value = apprenant.bio;
+    tab.splice(tab.indexOf(apprenant), 1)
+    btnAdd;
+    
   })
   
   linkSupprimer.addEventListener("click", (e)=>{
     cardId.parentNode.removeChild(cardId);
     var index = tab.indexOf(apprenant)
-
     tab.splice(index, 1);
     console.log(tab)
-   
   })
-  
+
   btnAnnuler.addEventListener("click", (e)=>{
     btnAdd.style.visibility="visible";
-    btnModifier.style.visibility="hidden"
+    btnModifier.style.visibility="hidden";
     btnAnnuler.style.visibility="hidden";
-    form.reset();
+    form.reset(); 
   })
   i = i+1;
 }

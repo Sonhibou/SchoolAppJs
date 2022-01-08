@@ -1,10 +1,9 @@
+/* import { applyRouting } from "./rooting.js"; */
 import { createCard } from "./CreateCard.js";
 /* import { addCard } from "./ajoutCard.js"; */
+import { API_URL } from "./config.js";
+import { API_KEY } from "./config.js";
 
-const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDI2MzU5NCwiZXhwIjoxOTU1ODM5NTk0fQ.cgomN8NIp1401ijodrI_EKG4p5q1YxcZ2U9VVBJ0uzA"
-const API_URL = "https://ltamlrsximtociwbiszo.supabase.co/rest/v1/apprenant"
-
-/* const local = JSON.parse(localStorage.getItem("apprenant")); */
 
 const form = document.getElementById("idForm");
 const nom = document.getElementById("inputNom");
@@ -15,11 +14,12 @@ const btnAdd = document.getElementById("ajouter");
 const btnModifier = document.getElementById("modifier");
 const btnAnnuler = document.getElementById("annuler");
 const secondCard = document.getElementById("form2")
+const card2 = document.getElementById("card2")
 const btnSauvegarder = document.getElementById("save")
+const findAll = document.getElementById("list")
 
 var tab = [];
 export{tab};
-
 
 btnAdd.addEventListener("click", (e)=>{
     e.preventDefault();
@@ -28,7 +28,6 @@ btnAdd.addEventListener("click", (e)=>{
       prenom: prenom.value,
       niveau: niveau.value,
       bio : texterea.value,
-      
     }
     
    if(nom.value == '' || prenom.value == '' || niveau.value == ''  || texterea.value == ''){
@@ -69,7 +68,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   niveau.value="Niveau"
   texterea.value=""
   btnModifier.style.visibility="hidden";
-  btnAnnuler.style.visibility="hidden"
+  btnAnnuler.style.visibility="hidden";
+
+  
 })
 
 // VERIFICATION DES MOTS SAISIS
@@ -100,3 +101,22 @@ texterea.addEventListener("input", (event) => {
    /*  btnSuggestion.disabled = false */
   }
 })
+
+/* findAll.addEventListener("click", ()=>{
+  window.addEventListener("DOMContentLoaded", (event) => {
+    //RECUPERATION DES DONNEES VIA API
+    fetch(API_URL, {
+    
+      headers: {
+        apikey: API_KEY,
+      },
+    })
+      .then((response) => response.json())
+      .then((apprenants) => {
+        apprenants.forEach((apprenant) => {
+          createCard(apprenant);
+        })
+      })
+  })
+})
+ */
