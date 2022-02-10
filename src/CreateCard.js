@@ -39,9 +39,7 @@ export const createCard = (apprenant)=>{
     prenom.value = apprenant.prenom;
     niveau.value = apprenant.niveau;
     texterea.value = apprenant.bio;
-    tab.splice(tab.indexOf(apprenant), 1)
-    btnAdd;
-    
+
   })
   
   linkSupprimer.addEventListener("click", (e)=>{
